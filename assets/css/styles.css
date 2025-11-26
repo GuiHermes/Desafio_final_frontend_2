@@ -1,4 +1,39 @@
 /* =========================================
+   BOTÃO DE REMOVER 
+   ========================================= */
+.remove-btn {
+    margin-top: 10px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e63946;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.remove-btn:hover {
+    background-color: #c1121f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+.remove-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+}
+
+.remove-btn:focus {
+    outline: 2px solid #ff9f80;
+    outline-offset: 2px;
+}
+
+
+
+/* =========================================
    RESET E VARIÁVEIS GLOBAIS
    ========================================= */
 
