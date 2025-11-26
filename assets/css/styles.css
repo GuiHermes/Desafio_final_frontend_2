@@ -1,0 +1,329 @@
+/* =========================================
+   RESET E VARIÁVEIS GLOBAIS
+   ========================================= */
+
+
+   
+:root {
+    --primary-orange: #FF4800; /* Laranja Ponto */
+    --dark-text: #2d2d2d;
+    --light-bg: #f2f2f2;
+    --white: #ffffff;
+    --gray-border: #e0e0e0;
+    --footer-bg: #333333;
+    --font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--light-bg);
+    font-family: var(--font-family);
+    color: var(--dark-text);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+/* =========================================
+   HEADER (CABEÇALHO)
+   ========================================= */
+.cabecalho {
+    background-color: var(--white);
+    border-bottom: 4px solid var(--primary-orange);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo_cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo_cabecalho h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-orange);
+    letter-spacing: -1px;
+}
+
+.menu ul {
+    display: flex;
+    gap: 25px;
+}
+
+.menu ul li a {
+    font-weight: 600;
+    color: var(--dark-text);
+    font-size: 1rem;
+}
+
+.menu ul li a:hover {
+    color: var(--primary-orange);
+    text-decoration: underline;
+}
+
+/* Responsividade do Menu para Telas Menores */
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+main {
+    flex: 1; /* Empurra o footer para baixo */
+    max-width: 1200px;
+    width: 90%;
+    margin: 40px auto;
+    background-color: transparent;
+}
+
+h1, h2 {
+    color: var(--dark-text);
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #555;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Estilo para listas de texto (na home) */
+main > ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+main > ul li {
+    margin-bottom: 10px;
+}
+
+/* Link de Call to Action na Home */
+main > a[href*="products"] {
+    display: inline-block;
+    background-color: var(--primary-orange);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+main > a[href*="products"]:hover {
+    background-color: #d93d00;
+}
+
+/* =========================================
+   FORMS (PRODUTOS E USUÁRIOS)
+   ========================================= */
+form {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 0 auto 50px auto; /* Centraliza o formulário */
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #444;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 5px; /* Espaço para o small */
+    border: 1px solid var(--gray-border);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #333;
+}
+
+form input:focus {
+    outline: none;
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 2px rgba(255, 80, 0, 0.2);
+}
+
+form small {
+    display: block;
+    height: 20px;
+    color: red;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+form button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-orange);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+form button:hover {
+    background-color: #d93d00;
+}
+
+/* =========================================
+   LISTAS DE CARDS (PRODUTOS E USUÁRIOS)
+   ========================================= */
+/* Aplica grid nos containers de lista */
+#lista-produto, #user-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+/* Estilo para cada item (card) que será gerado pelo JS */
+#lista-produto li, #user-list li {
+    background-color: var(--white);
+    border: 1px solid var(--gray-border);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#lista-produto li:hover, #user-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: var(--primary-orange);
+}
+
+/* Imagens dentro dos cards */
+#lista-produto img, #user-list img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+/* Títulos dentro dos cards */
+#lista-produto h3, #user-list h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--dark-text);
+}
+
+/* Preço (específico para produtos) */
+#lista-produto .preco {
+    font-size: 1.4rem;
+    color: var(--primary-orange);
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+/* Botões de deletar/editar dentro dos cards (se houver no JS) */
+.card-actions button {
+    padding: 8px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   FOOTER (RODAPÉ)
+   ========================================= */
+.rodape {
+    background-color: var(--footer-bg);
+    color: #ccc;
+    padding: 40px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    border-top: 5px solid var(--primary-orange);
+}
+
+.rodape .infos p {
+    color: #bbb;
+    font-size: 0.9rem;
+}
+
+.rodape .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.rodape .links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+    font-size: 0.9rem;
+    background-color: rgba(255,255,255,0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.rodape .links a:hover {
+    background-color: var(--primary-orange);
+    color: var(--white);
+}
+
+.rodape .links img {
+    filter: brightness(0) invert(1); /* Torna os ícones do GitHub brancos */
+}
