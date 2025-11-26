@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Ponto Quente - Produtos</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="icon" href="/assets/img/iconPage.png">
+    <style>
+        * {
+            background-color: rgb(37, 37, 37);
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
     <!-- INÍCIO DO HEADER -->
     <header class="cabecalho">
 
         <div class="logo_cabecalho">
-            <a href="/index.html"><img src="/assets/img/iconPage.png" alt="Icone da pagina" width="50px"></a> 
+            <a href="/index.html"><img src="/assets/img/iconPage.png" alt="Icone da pagina" width="50px"></a>
             <h1>Ponto Quente</h1>
         </div>
 
@@ -28,7 +36,42 @@
     <!-- FIM DO HEADER -->
     <!-- INÍCIO DA MAIN -->
     <main>
-        
+        <div>
+
+            <h1>Adicionar Produtos</h1>
+
+            <form id="productsForm">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Digite o título" required>
+                <small></small>
+
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" name="descricao" placeholder="Digite o descrição" required>
+                <small></small>
+
+                <label for="preco">Preço:</label>
+                <input type="text" id="preco" name="preco" placeholder="Digite o preço" required>
+                <small></small>
+
+                <label for="marca">Marca:</label>
+                <input type="text" id="marca" name="marca" placeholder="Digite a marca" required>
+                <small></small>
+
+                <label for="categoria">Categoria:</label>
+                <input type="text" id="categoria" name="categoria" placeholder="Digite a categoria" required>
+                <small></small>
+
+                <label for="foto-produto">Foto: (Opcional)</label>
+                <input type="text" id="foto-produto" name="foto-produto" placeholder="URL da Imagem">
+
+                <button type="subimit" onclick="">Adicionar</button>
+            </form>
+
+            <h1>Listas de Produtos</h1>
+            <!-- aqui está a lista não ordenada onde vão ser exibidas os usuarios mais tarde -->
+            <ul class="" id="lista-produto"></ul>
+
+        </div>
     </main>
     <!-- FIM DA MAIN -->
     <!-- INÍCIO DO FOOTER -->
@@ -38,13 +81,18 @@
         </div>
 
         <div class="links">
-            <a href="https://github.com/GuiHermes" target="_blank"><img src="/assets/img/gitIcon.png" alt="Icone do GitHub" width="30px">Guilherme Hermes</a>
-            <a href="https://github.com/mvmce" target="_blank"><img src="/assets/img/gitIcon.png" alt="Icone do GitHub" width="30px">Manuel Victor</a>
-            <a href="https://github.com/hian128" target="_blank"><img src="/assets/img/gitIcon.png" alt="Icone do GitHub" width="30px">Hian Oliveira</a>
-            <a href="https://github.com/Matheus-Rod03" target="_blank"><img src="/assets/img/gitIcon.png" alt="Icone do GitHub" width="30px">Matheus Rodrigues</a>
+            <a href="https://github.com/GuiHermes" target="_blank"><img src="/assets/img/gitIcon.png"
+                    alt="Icone do GitHub" width="30px">Guilherme Hermes</a>
+            <a href="https://github.com/mvmce" target="_blank"><img src="/assets/img/gitIcon.png" alt="Icone do GitHub"
+                    width="30px">Manuel Victor</a>
+            <a href="https://github.com/hian128" target="_blank"><img src="/assets/img/gitIcon.png"
+                    alt="Icone do GitHub" width="30px">Hian Oliveira</a>
+            <a href="https://github.com/Matheus-Rod03" target="_blank"><img src="/assets/img/gitIcon.png"
+                    alt="Icone do GitHub" width="30px">Matheus Rodrigues</a>
         </div>
     </footer>
     <!-- FIM DO FOOTER -->
     <script src="/products.js"></script>
 </body>
+
 </html>
