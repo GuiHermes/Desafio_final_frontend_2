@@ -24,7 +24,7 @@ Instruções para rodar o projeto localmente para testes e desenvolvimento.
     ```
 2.  **Entre no projeto**
     ```bash
-    cd projeto-frontend
+    cd Desafio_final_frontend_2
     ```
 3.  **Abra no VS Code**
     ```bash
